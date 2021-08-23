@@ -1,10 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Instagram</h1>
+      <h1 className="font-roboto text-4xl">Instagram</h1>
     </div>
   );
 }

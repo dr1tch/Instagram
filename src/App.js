@@ -1,9 +1,17 @@
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { Suspense, lazy } from 'react'
+
+import Loading from './components/loading';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="font-roboto text-4xl">Instagram</h1>
-    </div>
+    <Router>
+      <Suspense fallback={<Loading />} >
+        <div>
+          <h1>djlkqsjdlkjqsklj</h1>
+        </div>
+      </Suspense>
+    </Router>
   );
 }
 

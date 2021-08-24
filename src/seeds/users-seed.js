@@ -76,7 +76,7 @@ const users = [{
     {
         userId: "6",
         username: "phoebe",
-        email: "rphoebebuffay@gmail.com",
+        email: "phoebebuffay@gmail.com",
         fullName: "Phoebe Buffay",
         biography: "Smelly cat, smelly cat, what are they feeding you? / Smelly cat, smelly cat, it’s not your fault.",
         avatar: "/public/img/avatars/phoebe.jpg",

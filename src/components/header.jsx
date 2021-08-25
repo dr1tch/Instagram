@@ -5,8 +5,8 @@ import UserContext from '../context/user';
 import useUser from '../hooks/use-user';
 import FirebaseContext from '../context/firbase';
 export default function Header() {
-    const {user: loggedInUser} = useContext(UserContext);
-    const {user} = useUser(loggedInUser?.uid);
+    const {user: currentUser} = useContext(UserContext);
+    const {user} = useUser(currentUser?.uid);
     const { firebase } = useContext(FirebaseContext);
     const history = useHistory();
     return (
@@ -22,7 +22,7 @@ export default function Header() {
                    </div>
                    <div className="text-gray-700 text-center flex items-center align-items cursor-pointer">
                        {
-                           loggedInUser ? (
+                           currentUser ? (
 
                            <>
                        <Link to={ROUTES.DASHBOARD} >
@@ -42,7 +42,7 @@ export default function Header() {
                        </Link>
                        <button 
                             type="button"
-                            title='Sign Out'
+                            title='Log Out'
                             onClick={() => {
                                 firebase.auth().signOut();
                                 history.push(ROUTES.LOGIN);

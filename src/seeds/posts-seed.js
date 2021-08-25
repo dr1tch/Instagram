@@ -3,7 +3,7 @@ const posts = [
     {
         postId: "1",
         userId: "4",
-        image: "/public/img/posts/monica-post.png",
+        image: "/img/posts/monica-post.png",
         caption: "I'm engaged! I'm engaged! I'm engaged!",
         likes: ["1", "3"],
         comments: [{
@@ -23,7 +23,7 @@ const posts = [
     {
         postId: "2",
         userId: "3",
-        image: "/public/img/posts/ross-post.jpg",
+        image: "/img/posts/ross-post.jpg",
         caption: "I don't want to get over her! i want to be with her!",
         likes: ["3", "2"],
         comments: [{
@@ -43,7 +43,7 @@ const posts = [
     {
         postId: "3",
         userId: "sOMZlZMtZdQXmUS1uMa054dU7zx1",
-        image: "/public/img/posts/joey-post.jpg",
+        image: "/img/posts/joey-post.jpg",
         caption: "Okay buddy boy, here it is. You hide all my clothes, I'm wearing everything you own.",
         likes: ["2"],
         comments: [{
@@ -63,7 +63,7 @@ const posts = [
     {
         postId: "4",
         userId: "2",
-        image: "/public/img/posts/chandler-postjpeg",
+        image: "/img/posts/chandler-postjpeg",
         caption: "I'm hopeless and awkward and desperate for love!",
         likes: ["3", "1"],
         comments: [{
@@ -83,7 +83,7 @@ const posts = [
     {
         postId: "5",
         userId: "5",
-        image: "/public/img/posts/rachel-post.jpg",
+        image: "/img/posts/rachel-post.jpg",
         caption: "Ross, You are stealing my wind!",
         likes: ["3", "2"],
         comments: [{
@@ -108,7 +108,7 @@ const posts = [
     {
         postId: "6",
         userId: "6",
-        image: "/public/img/posts/phoebe-post.png",
+        image: "/img/posts/phoebe-post.png",
         caption: "If we were in prison, you guys would be, like, my bitches",
         likes: ["3", "2"],
         comments: [{

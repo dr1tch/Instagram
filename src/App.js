@@ -25,6 +25,7 @@ const NotFound = lazy(() => import('./pages/not-found'));
 // Hooks import
 function App() {
   const user = useAuthListener();
+  console.log(user)
   return (
     <UserContext.Provider value={{user}} >
       <Router>
@@ -32,7 +33,9 @@ function App() {
           <Switch>
             <Route path={ROUTES.LOGIN} component={Login} />
             <Route path={ROUTES.SIGNUP} component={Signup} />
-            <Route path={ROUTES.DASHBOARD} component={Dashboard} exact />
+            <Route path={ROUTES.DASHBOARD} exact >
+              <Dashboard user={user} />
+            </Route>
             <Route component={NotFound} />
           </Switch>
         </Suspense>

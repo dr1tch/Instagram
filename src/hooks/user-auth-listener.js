@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import FirebaseContext from "../context/firbase";
 
 // This hook will be called whenever the state of the authenticated user changes(signin, signout)
-export default function useAuthUser() {
+export default function useAuthListener() {
     const [user, setUser] = useState(null);
     const { firebase } = useContext(FirebaseContext);
 

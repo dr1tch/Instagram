@@ -9,3 +9,13 @@ export async function usernameAlreadyExists(username) {
         .get();
     return result.docs.length > 0;
 }
+
+// get the user by his userId
+export async function getUserByUserId(userId) {
+    const res = await firebase
+        .firestore()
+        .collection("users")
+        .where("userId", "==", userId)
+        .get();
+    return res.docs.map((item) => ({...item.data(), docId: item.id }));
+}

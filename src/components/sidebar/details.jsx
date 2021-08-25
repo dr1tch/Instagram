@@ -8,7 +8,7 @@ export default function Details({ fullname, username, avatar }) {
         <Skeleton count={1} height={61}/>
     ) : (
         
-            <div className='flex items-center gap-4 p-4 mb-5' >
+            <div className='flex items-center gap-4 mb-5' >
                 <Link to={`/${username}`} >
                     <img src={avatar} alt={`${fullname} profile`} className='rounded-full w-14 h-14' />
                 </Link>

@@ -6,8 +6,7 @@ import useUser from '../hooks/use-user';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 export default function Dashboard ({user: current}){
-    const { user, setCurrentUser } = useUser(current?.uid);
-    console.log('currentUser', user)
+    const { user } = useUser(current?.uid);
     useEffect(() => {
         document.title = 'Instagram';
     }, [])
@@ -15,7 +14,7 @@ export default function Dashboard ({user: current}){
         <CurrentUserContext.Provider value={{ user }} >
             <div>
                 <Header />
-                <div className='grid grid-cols-3 container mx-auto max-w-screen-lg gap-4 justify-between'>
+                <div className='grid grid-cols-3 gap-16 justify-between mx-auto max-w-screen-lg relative top-24'>
                     <Timeline />
                     <Sidebar />
                 </div>

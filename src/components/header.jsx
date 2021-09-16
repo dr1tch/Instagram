@@ -10,7 +10,7 @@ export default function Header() {
     const { firebase } = useContext(FirebaseContext);
     const history = useHistory();
     return (
-       <header className="h-16 bg-white border-b border-gray-primary mb-8">
+       <header className="h-16 bg-white border-b border-gray-primary mb-8 fixed top-0 right-0 left-0 z-50">
            <div className="container mx-auto max-w-screen-lg h-full">
                <div className="flex items-center justify-between h-full">
                    <div className="text-gray-700 text-center flex items-center align-items cursor-pointer">

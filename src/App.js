@@ -1,6 +1,6 @@
 // Packages imports 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import { Suspense, lazy, useContext } from 'react'
+import { Suspense, lazy } from 'react'
 
 // Constants import
 import * as ROUTES from './constants/routes';

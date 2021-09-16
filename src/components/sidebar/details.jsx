@@ -3,7 +3,7 @@ import Skeleton from 'react-loading-skeleton';
 import { Link } from 'react-router-dom';
 
 export default function Details({ fullname, username, avatar }) {
-    console.log('fullname, username, avatar', {fullname, username, avatar})
+    // console.log('fullname, username, avatar', {fullname, username, avatar})
     return !fullname || !username || !avatar ? (
         <Skeleton count={1} height={61}/>
     ) : (

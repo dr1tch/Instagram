@@ -40,6 +40,7 @@ export async function getPosts(userId, following) {
         .collection("posts")
         .where("userId", "in", following)
         .get();
+    console.log(`res`, res);
 
     const followedUserPosts = res.docs.map((post) => ({
         ...post.data(),
@@ -56,4 +57,26 @@ export async function getPosts(userId, following) {
         })
     );
     return postsWithUserDetails;
+}
+
+// getSuggestedUsers: get a list of suggested users for the current user to follow.
+export async function getSuggestedUsers(userId, following) {
+    console.log(`following`, following);
+    console.log(`userId`, userId);
+    let query = firebase.firestore().collection("users");
+    if (following.length > 0) {
+        query = query.where("userId", "not-in", [...following, userId]);
+        console.log("if");
+    } else {
+        query = query.where("userId", "!=", userId);
+        console.log("else");
+    }
+    const res = await query.limit(10).get();
+    console.log(`res-sugg`, res);
+    const suggestions = res.docs.map((user) => ({
+        ...user.data(),
+        userId: user.id,
+    }));
+    console.log(`suggestions`, suggestions);
+    return suggestions;
 }

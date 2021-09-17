@@ -2,13 +2,12 @@ import Details from './details';
 import Suggestions from './suggestions';
 import CurrentUserContext from "../../context/current-user";
 import { useContext } from "react";
-export default function Sidebar() {
+export default function Sidebar({user: current}) {
     const { user } = useContext(CurrentUserContext);
-    // console.log(user)
     return (
-        <div>
+        <div className='my-8'>
             <Details fullname={user?.fullName} username={user?.username} avatar={user?.avatar} />
-            <Suggestions />
+            <Suggestions following={user?.following} userId={user?.userId} />
         </div>
     );
 }

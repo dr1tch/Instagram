@@ -6,8 +6,8 @@ import Post from './post'
 export default function Timeline() {
     const { user } = useContext(CurrentUserContext);
     const { posts } = usePosts(user);
-    // console.log('user', user);
-    // console.log('Posts', posts)
+    console.log('user', user);
+    console.log('Posts', posts)
     return (
         <div className='container col-span-2'>
             {

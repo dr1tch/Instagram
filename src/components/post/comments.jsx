@@ -15,17 +15,6 @@ export default function Comments({comments: allComments, docId, createdAt, comme
         <div className='px-4 flex flex-col items-start mb-3'>
        
             {
-                comments.slice(0, commentsSlice).map((comment) => (
-                    <p key={`${comment.body}-${comment.username}`} className="mb-1">
-                      <Link to={`/${comment.username}`}>
-                        <span className="mr-1 font-bold text-black text-sm">{comment.username}</span>
-                      </Link>
-                      <span className=' font-normal text-sm text-black'>{comment.body}</span>
-                    </p>
-                  ))
-            }
-
-            {
                 comments.length >= 3 && commentsSlice < comments.length && (
                     <button
                         className="text-sm text-gray-base mb-1 cursor-pointer focus:outline-none"
@@ -41,6 +30,17 @@ export default function Comments({comments: allComments, docId, createdAt, comme
                     </button>
                 )
             }
+            {
+                comments.slice(0, commentsSlice).map((comment) => (
+                    <p key={`${comment.body}-${comment.username}`} className="mb-1">
+                      <Link to={`/${comment.username}`}>
+                        <span className="mr-1 font-bold text-black text-sm">{comment.username}</span>
+                      </Link>
+                      <span className=' font-normal text-sm text-black'>{comment.body}</span>
+                    </p>
+                  ))
+            }
+
             <span className="text-xs text-gray-400 font-regular mt-2">{formatDistance(createdAt, new Date()).toUpperCase() + ' AGO'}</span>
         </div> 
         {/* Add comment part (Form) */}

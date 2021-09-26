@@ -4,7 +4,7 @@ import * as ROUTES from '../../constants/routes';
 import SuggestedUsers from "./suggested-users";
 import { useEffect, useState } from "react";
 import { getSuggestedUsers } from "../../services/firebase-api";
-export default function Suggestions({following, userId}) {
+export default function Suggestions({following, userId, loggedInUserDocId}) {
     const [suggestions, setsuggestions] = useState([]);
     useEffect(() => {
        async function suggestedUsers() {
@@ -22,7 +22,7 @@ export default function Suggestions({following, userId}) {
                 </Link>
             </div>
             {
-                suggestions.length > 0 ? <SuggestedUsers suggestions={suggestions} /> : <Skeleton count={5} height={45} />
+                suggestions.length > 0 ? <SuggestedUsers suggestions={suggestions} loggedInUserDocId={loggedInUserDocId} userId={userId} /> : <Skeleton count={5} height={45} />
             }
         </div>
     )

@@ -7,7 +7,7 @@ export default function Sidebar({user: current}) {
     return (
         <div className='my-8'>
             <Details fullname={user?.fullName} username={user?.username} avatar={user?.avatar} />
-            <Suggestions following={user?.following} userId={user?.userId} />
+            <Suggestions following={user?.following} userId={user?.userId} loggedInUserDocId={user?.docId} />
         </div>
     );
 }

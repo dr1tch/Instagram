@@ -9,3 +9,4 @@ export const SUGGESTIONS = "/people";
 export const SAVED = "/:username/saved";
 export const EDIT_PROFILE = "/accounts/edit";
 export const NOTIFICATIONS = "/activity";
+export const NOT_FOUND = "/not-found";

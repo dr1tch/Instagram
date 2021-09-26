@@ -5,6 +5,7 @@ module.exports = {
         extend: {
             fill: (theme) => ({
                 red: theme("colors.red.primary"),
+                white: theme("colors.white"),
             }),
             colors: {
                 white: "#ffffff",

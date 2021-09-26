@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import { useContext, useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
+import { Link } from 'react-router-dom';
 import UserContext from '../../context/user';
 import useUser from '../../hooks/use-user';
+import * as ROUTES from '../../constants/routes';
 import { isCurrentUserFollowingProfile, toggleFollow } from '../../services/firebase-api';
 
 export default function Header({
@@ -67,7 +69,7 @@ export default function Header({
                         activeBtnFollow && isFollowingProfile === null ? (
                             <Skeleton count={1} width={80} height={32} />
                         ) : (
-                            activeBtnFollow && (
+                            activeBtnFollow ? (
 
                                 <button 
                                     className={isFollowingProfile ? 
@@ -84,6 +86,8 @@ export default function Header({
                                 >
                                     {isFollowingProfile ? 'Unfollow' : 'Follow'}
                                 </button>
+                            ) : (
+                                <Link to={ROUTES.EDIT_PROFILE} className='flex items-center justify-center px-3 border rounded w-24 h-8 font-semibold text-sm text-gray-base hover:bg-gray-100' >Edit Profile</Link>
                             )
                         )
                     }

@@ -1,6 +1,7 @@
 import Header from "./header";
 import { useReducer, useEffect } from 'react';
 import { getUserPostsByUserId } from '../../services/firebase-api';
+import Posts from "./posts";
 export default function Profile({user}) {
     console.log('user :>> ', user);
     const reducer = (state, newState) => ({...state, ...newState});
@@ -13,7 +14,8 @@ export default function Profile({user}) {
 
     useEffect(() => {
         async function getProfileDetailsAndPosts() {
-            const posts = await getUserPostsByUserId(user.userId);
+            const posts = await getUserPostsByUserId(user?.userId);
+            console.log('posts :>> ', await getUserPostsByUserId(user?.userId));
             dispatch({ profile: user, posts: posts, followersCount: user.followers.length });
         }
         if(user?.userId) getProfileDetailsAndPosts();
@@ -26,7 +28,7 @@ export default function Profile({user}) {
             followersCount={followersCount}
             setFollowersCount={dispatch}
         />
-        <h1>This is the profile of {user?.username}</h1>
+        <Posts posts={posts} />
         </>
     )
 };
